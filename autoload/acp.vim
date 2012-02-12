@@ -133,6 +133,12 @@ function acp#meetsForPerlOmni(context)
 endfunction
 
 "
+function acp#meetsForClojureOmni(context)
+  return g:acp_behaviorClojureOmniLength >= 0 &&
+        \ a:context =~ '\k\{' . g:acp_behaviorClojureOmniLength . ',}$'
+endfunction
+
+"
 function acp#meetsForXmlOmni(context)
   return g:acp_behaviorXmlOmniLength >= 0 &&
         \ a:context =~ '\(<\|<\/\|<[^>]\+ \|<[^>]\+=\"\)\k\{' .
